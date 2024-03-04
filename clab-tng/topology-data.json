@@ -1,0 +1,109 @@
+{
+  "name": "tng",
+  "type": "clab",
+  "clab": {
+    "config": {
+      "prefix": "",
+      "mgmt": {
+        "network": "clab",
+        "bridge": "br-bfc338444fb8",
+        "ipv4-subnet": "172.20.20.0/24",
+        "ipv4-gw": "172.20.20.1",
+        "ipv6-subnet": "2001:172:20:20::/64",
+        "ipv6-gw": "2001:172:20:20::1",
+        "mtu": 1500,
+        "external-access": true
+      }
+    }
+  },
+  "nodes": {
+    "srl1": {
+      "index": "0",
+      "shortname": "srl1",
+      "longname": "srl1",
+      "fqdn": "srl1.tng.io",
+      "group": "",
+      "labdir": "/home/tng/clab-tng/srl1",
+      "kind": "nokia_srlinux",
+      "image": "ghcr.io/nokia/srlinux:23.10.1",
+      "mgmt-net": "",
+      "mgmt-intf": "",
+      "mgmt-ipv4-address": "172.20.20.2",
+      "mgmt-ipv4-prefix-length": 24,
+      "mgmt-ipv6-address": "2001:172:20:20::2",
+      "mgmt-ipv6-prefix-length": 64,
+      "mac-address": "1a:a2:00:00:00:00",
+      "labels": {
+        "clab-mgmt-net-bridge": "br-bfc338444fb8",
+        "clab-node-group": "",
+        "clab-node-kind": "nokia_srlinux",
+        "clab-node-lab-dir": "/home/tng/clab-tng/srl1",
+        "clab-node-name": "srl1",
+        "clab-node-type": "ixrd2",
+        "clab-topo-file": "/home/tng/tng.yml",
+        "containerlab": "tng"
+      },
+      "port-bindings": [
+      ]
+    },
+    "srl2": {
+      "index": "1",
+      "shortname": "srl2",
+      "longname": "srl2",
+      "fqdn": "srl2.tng.io",
+      "group": "",
+      "labdir": "/home/tng/clab-tng/srl2",
+      "kind": "nokia_srlinux",
+      "image": "ghcr.io/nokia/srlinux:23.10.1",
+      "mgmt-net": "",
+      "mgmt-intf": "",
+      "mgmt-ipv4-address": "172.20.20.3",
+      "mgmt-ipv4-prefix-length": 24,
+      "mgmt-ipv6-address": "2001:172:20:20::3",
+      "mgmt-ipv6-prefix-length": 64,
+      "mac-address": "1a:b4:01:00:00:00",
+      "labels": {
+        "clab-mgmt-net-bridge": "br-bfc338444fb8",
+        "clab-node-group": "",
+        "clab-node-kind": "nokia_srlinux",
+        "clab-node-lab-dir": "/home/tng/clab-tng/srl2",
+        "clab-node-name": "srl2",
+        "clab-node-type": "ixrd2",
+        "clab-topo-file": "/home/tng/tng.yml",
+        "containerlab": "tng"
+      },
+      "port-bindings": [
+      ]
+    }
+  },
+  "links": [
+    {
+      "a": {
+        "node": "srl1",
+        "interface": "e1-1",
+        "mac": "aa:c1:ab:5a:35:62",
+        "peer": "z"
+      },
+      "z": {
+        "node": "srl2",
+        "interface": "e1-1",
+        "mac": "aa:c1:ab:05:73:20",
+        "peer": "a"
+      }
+    },
+    {
+      "a": {
+        "node": "srl1",
+        "interface": "e1-2",
+        "mac": "aa:c1:ab:39:cb:75",
+        "peer": "z"
+      },
+      "z": {
+        "node": "srl2",
+        "interface": "e1-2",
+        "mac": "aa:c1:ab:c5:9a:05",
+        "peer": "a"
+      }
+    }
+  ]
+}
