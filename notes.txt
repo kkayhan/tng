@@ -3,6 +3,8 @@ set / interface system0 subinterface 0 ipv4
 set / interface system0 subinterface 0 ipv4 admin-state enable
 set / interface system0 subinterface 0 ipv4 address 100.1.1.1/32
 
+enter candidate
+
 set / routing-policy prefix-set loopback
 set / routing-policy prefix-set loopback prefix 100.1.1.1/32 mask-length-range exact
 set / routing-policy policy all
@@ -18,3 +20,5 @@ set / routing-policy policy loopback statement 1 action policy-result accept
 
 set / network-instance default protocols bgp group bgp_peer export-policy loopback
 set / network-instance default protocols bgp group bgp_peer import-policy all
+
+commit stay
