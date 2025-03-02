@@ -84,8 +84,19 @@ show router bgp summary
 
 ## Task 4: Configure your service on the SR Linux leafs to accept traffic from clients
 
+
 <details>
-<summary># On Leaf21</summary>
+<summary>Solution</summary>
+```
+show router bgp summary
+```
+</details>
+
+## Task 5: Configure the PE nodes to re-encapsulate VXLAN traffic into MPLS for the WAN
+TODO / Placeholder: Configure the service on SR OS
+
+<details>
+<summary>Solution</summary>
 ```
 enter candidate
 
@@ -104,16 +115,6 @@ set / network-instance l2dci protocols bgp-vpn bgp-instance 1 route-target impor
 
 commit now
 
-```
-</details>
-
-## Task 5: Configure the PE nodes to re-encapsulate VXLAN traffic into MPLS for the WAN
-TODO / Placeholder: Configure the service on SR OS
-
-<details>
-<summary>Solution</summary>
-```
-<TODO placeholder>
 ```
 </details>
 
